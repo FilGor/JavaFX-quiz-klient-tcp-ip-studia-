@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <AnchorPane prefHeight="500.0" prefWidth="600.0">
+         <children>
+            <TextField fx:id="answerField" layoutX="186.0" layoutY="84.0" prefHeight="25.0" prefWidth="229.0" />
+            <TextField fx:id="nickField" layoutX="249.0" layoutY="429.0" prefHeight="25.0" prefWidth="102.0" />
+            <Button fx:id="sendAnswerButton" layoutX="223.0" layoutY="217.0" mnemonicParsing="false" onAction="#sendAnswerMethod" prefHeight="66.0" prefWidth="154.0" text="Send Answer&gt;&gt;" />
+            <Label layoutX="92.0" layoutY="88.0" text="Your Answer : " />
+            <Label layoutX="158.0" layoutY="433.0" prefHeight="17.0" prefWidth="76.0" text="Your Nick:" />
+         </children>
+      </AnchorPane>
+   </children>
+</GridPane>
