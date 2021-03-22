@@ -2,6 +2,7 @@ package sample;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 
@@ -23,12 +24,22 @@ public class Controller {
     }
     @FXML
     void sendAnswerMethod(ActionEvent event) throws IOException {
-        s = new Socket("localhost",8888);
-        PrintWriter pw = new PrintWriter(s.getOutputStream());
-        pw.println(answerField.getText());
-        pw.flush();
-        pw.close();
-        s.close();
-    }
+
+
+        if(answerField.getText().trim().isEmpty() || nickField.getText().trim().isEmpty()){
+            Alert fail= new Alert(Alert.AlertType.INFORMATION);
+            fail.setHeaderText("failure");
+            fail.setContentText("Uzupelnij wszystkie pola");
+            fail.show();}
+        else{
+            s = new Socket("localhost",8888);
+            PrintWriter pw = new PrintWriter(s.getOutputStream());
+            pw.println(answerField.getText());
+            pw.flush();
+            pw.println(nickField.getText());
+            pw.flush();
+            pw.close();
+            s.close();
+        }}
 
 }
